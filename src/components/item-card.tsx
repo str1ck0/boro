@@ -74,7 +74,7 @@ export function ItemGrid({ items, savedIds, firstPriority }: { items: ItemCardDa
 /** Horizontally scrolling row on mobile, grid on desktop. */
 export function ItemRail({ items, savedIds }: { items: ItemCardData[]; savedIds?: Set<string> }) {
   return (
-    <div className="scrollbar-none -mx-4 flex snap-x gap-4 overflow-x-auto px-4 sm:mx-0 sm:grid sm:grid-cols-3 sm:overflow-visible sm:px-0 lg:grid-cols-4">
+    <div className="scrollbar-none -mx-4 flex snap-x scroll-px-4 gap-4 overflow-x-auto px-4 sm:mx-0 sm:scroll-px-0 sm:grid sm:grid-cols-3 sm:overflow-visible sm:px-0 lg:grid-cols-4">
       {items.map((item) => (
         <ItemCard key={item.id} item={item} saved={savedIds?.has(item.id)} className="w-[44vw] max-w-56 shrink-0 snap-start sm:w-auto sm:max-w-none" />
       ))}

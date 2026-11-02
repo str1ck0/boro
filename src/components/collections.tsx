@@ -8,7 +8,7 @@ export function CollectionCards({ layout = "rail" }: { layout?: "rail" | "mosaic
     <div
       className={cn(
         layout === "rail"
-          ? "scrollbar-none -mx-4 flex snap-x gap-4 overflow-x-auto px-4 sm:mx-0 sm:grid sm:grid-cols-3 sm:px-0"
+          ? "scrollbar-none -mx-4 flex snap-x scroll-px-4 gap-4 overflow-x-auto px-4 sm:mx-0 sm:grid sm:grid-cols-3 sm:px-0"
           : "grid grid-cols-2 gap-4 lg:grid-cols-3",
       )}
     >
