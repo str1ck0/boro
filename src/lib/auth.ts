@@ -32,14 +32,14 @@ export const auth = betterAuth({
     },
   },
   session: { cookieCache: { enabled: true, maxAge: 60 * 5 } },
-  // Allow the deployment's own vercel.app URLs alongside BETTER_AUTH_URL.
+  // Allow the deployment's own vercel.app URLs alongside BETTER_AUTH_URL, plus any
+  // extra origins (comma-separated, wildcards allowed) from TRUSTED_ORIGINS.
   trustedOrigins: [
-    process.env.VERCEL_URL,
-    process.env.VERCEL_BRANCH_URL,
-    process.env.VERCEL_PROJECT_PRODUCTION_URL,
-  ]
-    .filter(Boolean)
-    .map((host) => `https://${host}`),
+    ...[process.env.VERCEL_URL, process.env.VERCEL_BRANCH_URL, process.env.VERCEL_PROJECT_PRODUCTION_URL]
+      .filter(Boolean)
+      .map((host) => `https://${host}`),
+    ...(process.env.TRUSTED_ORIGINS?.split(",").map((o) => o.trim()).filter(Boolean) ?? []),
+  ],
   plugins: [nextCookies()],
 });
 
