@@ -15,7 +15,7 @@ export function ForgotPasswordForm() {
   if (sent) {
     return (
       <div className="space-y-4">
-        <MailCheck className="size-10 text-daintree-700" />
+        <MailCheck className="size-10 text-daintree" />
         <h1 className="text-3xl font-extrabold tracking-tight">Check your inbox</h1>
         <p className="text-muted">
           If there&apos;s a Boro account for that email, we&apos;ve sent a link to choose a new password. It expires in an hour —
@@ -50,7 +50,7 @@ export function ForgotPasswordForm() {
         <Field label="Email address" htmlFor="email">
           <Input id="email" name="email" type="email" autoComplete="email" required />
         </Field>
-        {error && <p className="rounded-2xl bg-outback-50 p-3 text-sm font-medium text-outback-700" role="alert">{error}</p>}
+        {error && <p className="rounded-2xl bg-outback-50 p-3 text-sm font-medium text-outback" role="alert">{error}</p>}
         <Button type="submit" variant="secondary" size="lg" className="w-full" disabled={pending}>
           {pending ? "Sending…" : "Send reset link"}
         </Button>
@@ -115,7 +115,7 @@ export function ResetPasswordForm() {
         <Field label="Confirm new password" htmlFor="confirm">
           <Input id="confirm" name="confirm" type="password" autoComplete="new-password" required minLength={8} />
         </Field>
-        {error && <p className="rounded-2xl bg-outback-50 p-3 text-sm font-medium text-outback-700" role="alert">{error}</p>}
+        {error && <p className="rounded-2xl bg-outback-50 p-3 text-sm font-medium text-outback" role="alert">{error}</p>}
         <Button type="submit" variant="secondary" size="lg" className="w-full" disabled={pending}>
           {pending ? "Saving…" : "Save new password"}
         </Button>

@@ -21,7 +21,7 @@ export default async function HomePage() {
         <section className="space-y-5">
           <HeaderBand className="flex items-center justify-between gap-4">
             <div>
-              <h1 className="text-4xl font-extrabold tracking-tight text-outback-600 sm:text-5xl">
+              <h1 className="text-4xl font-extrabold tracking-tight text-outback sm:text-5xl">
                 Hello, {firstName(user.name)}
               </h1>
               <p className="mt-1 text-lg text-ink/80">Welcome back</p>
@@ -65,7 +65,7 @@ function SearchBar() {
         aria-label="Search Boro"
         className="h-14 w-full rounded-full border border-transparent bg-mist focus:bg-surface pl-13 pr-32 text-base placeholder:text-muted/80 focus:border-cosmos focus:outline-none focus:ring-4 focus:ring-cosmos/10"
       />
-      <button className="absolute right-2 top-2 h-10 rounded-full bg-cosmos px-5 font-semibold text-white hover:bg-cosmos-700">
+      <button className="absolute right-2 top-2 h-10 rounded-full bg-cosmos px-5 font-semibold text-white hover:bg-cosmos/90">
         Search
       </button>
     </form>
@@ -137,7 +137,7 @@ function Hero() {
 function LendCta() {
   return (
     <section className="relative overflow-hidden rounded-[2rem] bg-cosmos px-6 py-10 text-white sm:px-12 sm:py-14">
-      <div className="absolute -right-16 -top-16 size-64 rounded-full bg-cosmos-700" aria-hidden />
+      <div className="absolute -right-16 -top-16 size-64 rounded-full bg-cosmos" aria-hidden />
       <div className="absolute -bottom-24 right-24 size-48 rounded-full bg-outback/90" aria-hidden />
       <div className="relative max-w-lg">
         <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">Got a shed full of maybes?</h2>

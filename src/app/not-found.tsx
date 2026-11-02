@@ -11,7 +11,7 @@ export default function NotFound() {
         <h1 className="text-3xl font-extrabold">Someone&apos;s borrowed this page</h1>
         <p className="mt-2 text-muted">It might have been removed, paused, or never existed.</p>
       </div>
-      <Link href="/explore" className="rounded-full bg-outback-600 px-6 py-3 font-semibold text-white hover:bg-outback-700">
+      <Link href="/explore" className="rounded-full bg-outback px-6 py-3 font-semibold text-white hover:bg-outback/90">
         Explore Boro
       </Link>
     </main>

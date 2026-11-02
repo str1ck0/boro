@@ -59,7 +59,7 @@ export function BookingActions({
   return (
     <div className="space-y-3">
       {buttons && <div className="flex flex-wrap gap-2">{buttons}</div>}
-      {error && <p className="text-sm text-outback-700">{error}</p>}
+      {error && <p className="text-sm text-outback">{error}</p>}
       {status === "completed" && !reviewed && <ReviewForm bookingId={bookingId} otherName={otherName} role={role} />}
       {status === "completed" && reviewed && <p className="text-sm text-muted">Thanks for leaving a review ✓</p>}
     </div>
@@ -98,7 +98,7 @@ function ReviewForm({ bookingId, otherName, role }: { bookingId: string; otherNa
         ))}
         <input type="hidden" name="rating" value={rating} />
       </div>
-      {state.fieldErrors?.rating && <p className="text-sm text-outback-700">{state.fieldErrors.rating}</p>}
+      {state.fieldErrors?.rating && <p className="text-sm text-outback">{state.fieldErrors.rating}</p>}
       <input
         name="title"
         placeholder="Sum it up (optional)"
@@ -106,7 +106,7 @@ function ReviewForm({ bookingId, otherName, role }: { bookingId: string; otherNa
         className="h-11 w-full rounded-xl border border-line bg-surface px-3 focus:border-cosmos focus:outline-none"
       />
       <Textarea name="comment" rows={3} className="min-h-0 rounded-xl" placeholder="What went well? Anything others should know?" />
-      {(state.fieldErrors?.comment || state.error) && <p className="text-sm text-outback-700">{state.fieldErrors?.comment ?? state.error}</p>}
+      {(state.fieldErrors?.comment || state.error) && <p className="text-sm text-outback">{state.fieldErrors?.comment ?? state.error}</p>}
       <div className="flex gap-2">
         <Button size="sm" type="submit" disabled={pending}>{pending ? "Posting…" : "Post review"}</Button>
         <Button size="sm" type="button" variant="ghost" onClick={() => setOpen(false)}>Not now</Button>

@@ -83,7 +83,7 @@ export function AuthForm({ mode, googleEnabled }: { mode: "sign-in" | "sign-up";
       )}
 
       {params.get("reset") && (
-        <p className="rounded-2xl bg-daintree-50 p-3 text-sm font-medium text-daintree-700">
+        <p className="rounded-2xl bg-daintree-50 p-3 text-sm font-medium text-daintree">
           Password updated — log in with your new one.
         </p>
       )}
@@ -124,13 +124,13 @@ export function AuthForm({ mode, googleEnabled }: { mode: "sign-in" | "sign-up";
               type="button"
               onClick={() => setShow((s) => !s)}
               aria-label={show ? "Hide password" : "Show password"}
-              className="absolute right-2 top-1/2 flex size-9 -translate-y-1/2 items-center justify-center rounded-full text-outback-600 hover:bg-outback-50"
+              className="absolute right-2 top-1/2 flex size-9 -translate-y-1/2 items-center justify-center rounded-full text-outback hover:bg-outback-50"
             >
               {show ? <EyeOff className="size-5" /> : <Eye className="size-5" />}
             </button>
           </div>
         </Field>
-        {error && <p className="rounded-2xl bg-outback-50 p-3 text-sm font-medium text-outback-700" role="alert">{error}</p>}
+        {error && <p className="rounded-2xl bg-outback-50 p-3 text-sm font-medium text-outback" role="alert">{error}</p>}
         <Button type="submit" variant={mode === "sign-in" ? "secondary" : "primary"} size="lg" className="w-full" disabled={pending}>
           {pending ? "One sec…" : mode === "sign-in" ? "Log in" : "Create account"}
         </Button>

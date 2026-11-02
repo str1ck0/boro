@@ -60,7 +60,7 @@ export function PhotoUploader({ initial = [], error }: { initial?: string[]; err
           </div>
         ))}
         {Array.from({ length: uploading }).map((_, i) => (
-          <div key={`u${i}`} className="flex aspect-square items-center justify-center rounded-2xl bg-outback-50 text-outback-600">
+          <div key={`u${i}`} className="flex aspect-square items-center justify-center rounded-2xl bg-outback-50 text-outback">
             <Loader2 className="size-6 animate-spin" />
           </div>
         ))}
@@ -69,8 +69,8 @@ export function PhotoUploader({ initial = [], error }: { initial?: string[]; err
             type="button"
             onClick={() => input.current?.click()}
             className={cn(
-              "flex aspect-square flex-col items-center justify-center gap-2 rounded-2xl border-2 border-dashed text-outback-600 transition hover:bg-outback-50",
-              error ? "border-outback-600" : "border-outback/40",
+              "flex aspect-square flex-col items-center justify-center gap-2 rounded-2xl border-2 border-dashed text-outback transition hover:bg-outback-50",
+              error ? "border-outback" : "border-outback/40",
               photos.length === 0 && "col-span-3 aspect-[3/1] sm:col-span-4 sm:aspect-[4/1]",
             )}
           >
@@ -80,7 +80,7 @@ export function PhotoUploader({ initial = [], error }: { initial?: string[]; err
         )}
       </div>
       <input ref={input} type="file" accept="image/jpeg,image/png,image/webp,image/avif" multiple hidden onChange={(e) => onFiles(e.target.files)} />
-      <p className={cn("text-sm", error || uploadError ? "text-outback-700" : "text-muted")}>
+      <p className={cn("text-sm", error || uploadError ? "text-outback" : "text-muted")}>
         {uploadError ?? error ?? `${photos.length}/${MAX} photos — show the item's condition. The first one is the cover.`}
       </p>
     </div>

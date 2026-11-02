@@ -26,7 +26,7 @@ export function ConversationList({ conversations, activeId }: { conversations: C
             <div className="min-w-0 flex-1">
               <div className="flex items-baseline justify-between gap-2">
                 <p className={cn("truncate", c.unread ? "font-extrabold" : "font-bold")}>{c.otherName}</p>
-                <span className={cn("shrink-0 text-xs", c.unread ? "font-bold text-daintree-700" : "text-muted")}>{shortDate(c.lastMessageAt)}</span>
+                <span className={cn("shrink-0 text-xs", c.unread ? "font-bold text-daintree" : "text-muted")}>{shortDate(c.lastMessageAt)}</span>
               </div>
               <p className="truncate text-sm font-medium text-ink/80">{c.itemTitle}</p>
               <p className={cn("truncate text-sm", c.unread ? "font-semibold text-ink" : "text-muted")}>{c.lastMessage ?? "No messages yet"}</p>

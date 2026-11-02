@@ -52,7 +52,7 @@ export default async function ItemPage({
   return (
     <div className="space-y-6 pb-16 lg:pb-0">
       {listed && isOwner && (
-        <div className="flex items-center gap-3 rounded-card bg-daintree-50 p-4 text-daintree-700">
+        <div className="flex items-center gap-3 rounded-card bg-daintree-50 p-4 text-daintree">
           <PartyPopper className="size-6 shrink-0" />
           <p className="font-semibold">Your item is live on Boro! We&apos;ll let you know when someone asks to borrow it.</p>
         </div>
@@ -64,8 +64,8 @@ export default async function ItemPage({
 
           <header className="space-y-3">
             <div className="flex items-center gap-2">
-              <Link href={`/explore?category=${cat.slug}`} className={cn("inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-sm font-semibold", tone.soft, tone.text)}>
-                <CategoryIcon icon={cat.icon} className="size-4" /> {cat.label}
+              <Link href={`/explore?category=${cat.slug}`} className="inline-flex items-center gap-1.5 rounded-full bg-mist px-3 py-1 text-sm font-semibold hover:bg-mist-deep">
+                <CategoryIcon icon={cat.icon} className={cn("size-4", tone.text)} /> {cat.label}
               </Link>
               {item.status === "paused" && <Badge tone="eureka">Paused</Badge>}
             </div>
@@ -172,8 +172,8 @@ export default async function ItemPage({
             )}
           </div>
           <ul className="mt-4 space-y-2 px-2 text-sm text-muted">
-            <li className="flex gap-2"><ShieldCheck className="size-4 shrink-0 text-daintree-700" /> Check the item together at pick-up and return.</li>
-            <li className="flex gap-2"><BadgeCheck className="size-4 shrink-0 text-daintree-700" /> Reviews only come from completed borrows.</li>
+            <li className="flex gap-2"><ShieldCheck className="size-4 shrink-0 text-daintree" /> Check the item together at pick-up and return.</li>
+            <li className="flex gap-2"><BadgeCheck className="size-4 shrink-0 text-daintree" /> Reviews only come from completed borrows.</li>
           </ul>
         </aside>
       </div>

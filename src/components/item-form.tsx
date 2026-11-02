@@ -79,9 +79,9 @@ export function ItemForm({
         </div>
       </section>
 
-      {state.error && <p className="rounded-2xl bg-outback-50 p-4 font-medium text-outback-700">{state.error}</p>}
+      {state.error && <p className="rounded-2xl bg-outback-50 p-4 font-medium text-outback">{state.error}</p>}
       {Object.keys(e).length > 0 && (
-        <p className="font-medium text-outback-700" role="alert">A few things need fixing — see above.</p>
+        <p className="font-medium text-outback" role="alert">A few things need fixing — see above.</p>
       )}
 
       <Button type="submit" size="lg" disabled={pending} className="w-full sm:w-auto">

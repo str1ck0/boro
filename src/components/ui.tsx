@@ -10,12 +10,12 @@ const buttonBase =
   "inline-flex items-center justify-center gap-2 rounded-full font-semibold transition active:scale-[0.98] disabled:pointer-events-none disabled:opacity-50";
 
 const buttonVariants = {
-  primary: "bg-outback-600 text-white hover:bg-outback-700 shadow-sm",
-  secondary: "bg-cosmos text-white hover:bg-cosmos-700 shadow-sm",
+  primary: "bg-outback text-white hover:bg-outback/90 shadow-sm",
+  secondary: "bg-cosmos text-white hover:bg-cosmos/90 shadow-sm",
   outline: "bg-surface text-ink ring-1 ring-inset ring-line hover:ring-ink/30",
   ghost: "text-ink hover:bg-ink/5",
-  success: "bg-daintree-700 text-white hover:bg-daintree-700/90",
-  danger: "bg-surface text-outback-700 ring-1 ring-inset ring-line hover:ring-outback-700/40",
+  success: "bg-daintree text-white hover:bg-daintree/90",
+  danger: "bg-surface text-outback ring-1 ring-inset ring-line hover:ring-outback/40",
 } as const;
 
 const buttonSizes = {
@@ -41,7 +41,7 @@ export function ButtonLink({ variant, size, className, ...props }: ComponentProp
 /* ── Form fields ─────────────────────────────────────────────────────── */
 
 const fieldBase =
-  "w-full rounded-2xl border border-transparent bg-mist focus:bg-surface px-4 text-[15px] text-ink placeholder:text-muted/70 transition focus:border-cosmos focus:ring-4 focus:ring-cosmos/10 focus:outline-none aria-invalid:border-outback-600";
+  "w-full rounded-2xl border border-transparent bg-mist focus:bg-surface px-4 text-[15px] text-ink placeholder:text-muted/70 transition focus:border-cosmos focus:ring-4 focus:ring-cosmos/10 focus:outline-none aria-invalid:border-outback";
 
 export function Input({ className, ...props }: ComponentProps<"input">) {
   return <input className={cn(fieldBase, "h-12", className)} {...props} />;
@@ -77,7 +77,7 @@ export function Field({
       </label>
       {children}
       {error ? (
-        <p className="text-sm text-outback-700">{error}</p>
+        <p className="text-sm text-outback">{error}</p>
       ) : hint ? (
         <p className="text-sm text-muted">{hint}</p>
       ) : null}
@@ -153,10 +153,10 @@ export function RatingSummary({ avg, count }: { avg: number | null; count: numbe
 }
 
 const badgeTones = {
-  outback: "bg-outback-50 text-outback-700",
-  cosmos: "bg-cosmos-50 text-cosmos",
-  daintree: "bg-daintree-50 text-daintree-700",
-  eureka: "bg-eureka-50 text-eureka-700",
+  outback: "bg-outback text-white",
+  cosmos: "bg-cosmos text-white",
+  daintree: "bg-daintree text-white",
+  eureka: "bg-eureka text-ink",
   neutral: "bg-ink/5 text-muted",
 } as const;
 
@@ -210,9 +210,9 @@ export function PageHeader({
 }) {
   const color = {
     cosmos: "text-cosmos",
-    outback: "text-outback-600",
-    daintree: "text-daintree-700",
-    eureka: "text-eureka-700",
+    outback: "text-outback",
+    daintree: "text-daintree",
+    eureka: "text-eureka",
   }[tone];
   return (
     <HeaderBand className="mb-8 flex items-end justify-between gap-4">

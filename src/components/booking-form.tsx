@@ -71,16 +71,16 @@ export function BookingForm({ itemId, pricePerDay, bond, minDays, lenderName, bo
       </div>
 
       {(state.fieldErrors?.startDate || state.fieldErrors?.endDate || state.error) && (
-        <p className="text-sm font-medium text-outback-700">
+        <p className="text-sm font-medium text-outback">
           {state.error ?? state.fieldErrors?.startDate ?? state.fieldErrors?.endDate}
         </p>
       )}
       {clash && (
-        <p className="text-sm font-medium text-outback-700">
+        <p className="text-sm font-medium text-outback">
           Already booked {dateRange(clash.startDate, clash.endDate)} — try other dates.
         </p>
       )}
-      {tooShort && <p className="text-sm font-medium text-outback-700">Minimum hire is {minDays} days.</p>}
+      {tooShort && <p className="text-sm font-medium text-outback">Minimum hire is {minDays} days.</p>}
 
       <Textarea
         name="message"

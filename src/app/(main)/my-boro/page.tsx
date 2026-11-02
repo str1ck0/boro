@@ -59,7 +59,7 @@ export default async function MyBoroPage({ searchParams }: { searchParams: Promi
           >
             {t.label}
             {t.id === "lending" && pending > 0 && (
-              <span className="ml-1.5 inline-flex size-5 items-center justify-center rounded-full bg-outback-600 text-[11px] text-white">{pending}</span>
+              <span className="ml-1.5 inline-flex size-5 items-center justify-center rounded-full bg-outback text-[11px] text-white">{pending}</span>
             )}
           </Link>
         ))}

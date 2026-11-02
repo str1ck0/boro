@@ -50,7 +50,7 @@ export function UserMenu({ image, name }: { image: string | null; name: string }
           <hr className="my-2 border-line" />
           <button
             role="menuitem"
-            className={`${item} w-full text-left text-outback-700`}
+            className={`${item} w-full text-left text-outback`}
             onClick={async () => {
               await signOut();
               router.push("/");

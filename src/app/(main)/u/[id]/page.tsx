@@ -26,7 +26,7 @@ export default async function ProfilePage({ params }: { params: Params }) {
       <header className="flex flex-col gap-6 rounded-[2rem] bg-mist p-6 sm:flex-row sm:items-center sm:p-8">
         <Avatar src={profile.image} name={profile.name} size={112} className="ring-4 ring-eureka" />
         <div className="flex-1 space-y-2">
-          <h1 className="text-3xl font-extrabold tracking-tight text-eureka-700 sm:text-4xl">{profile.name}</h1>
+          <h1 className="text-3xl font-extrabold tracking-tight text-eureka sm:text-4xl">{profile.name}</h1>
           <p className="text-muted">Boro member since {memberSince(profile.createdAt)}</p>
           <div className="flex flex-wrap gap-x-5 gap-y-2 pt-1 text-sm font-semibold">
             {profile.stats.reviewCount > 0 && (
@@ -36,7 +36,7 @@ export default async function ProfilePage({ params }: { params: Params }) {
               </span>
             )}
             {profile.emailVerified && (
-              <span className="inline-flex items-center gap-1"><BadgeCheck className="size-4 text-daintree-700" /> Verified email</span>
+              <span className="inline-flex items-center gap-1"><BadgeCheck className="size-4 text-daintree" /> Verified email</span>
             )}
             {profile.suburb && (
               <span className="inline-flex items-center gap-1 text-cosmos"><MapPin className="size-4" /> {profile.suburb}</span>

@@ -21,7 +21,7 @@ export default async function LendPage() {
       </div>
       <aside className="hidden lg:block">
         <div className="sticky top-24 space-y-4 rounded-card bg-eureka-50 p-6">
-          <Lightbulb className="size-7 text-eureka-700" />
+          <Lightbulb className="size-7 text-eureka" />
           <h2 className="font-bold">Tips for a great listing</h2>
           <ul className="space-y-3 text-sm text-ink/80">
             <li><strong>Daylight photos</strong> from a few angles get the most requests.</li>

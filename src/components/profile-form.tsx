@@ -74,7 +74,7 @@ export function ProfileForm(initial: Props) {
       <div className="flex items-center gap-4">
         <Button type="submit" disabled={pending || uploading}>{pending ? "Saving…" : "Save profile"}</Button>
         {state.ok && !pending && (
-          <span className="inline-flex items-center gap-1 font-semibold text-daintree-700"><Check className="size-4" /> Saved</span>
+          <span className="inline-flex items-center gap-1 font-semibold text-daintree"><Check className="size-4" /> Saved</span>
         )}
       </div>
     </form>

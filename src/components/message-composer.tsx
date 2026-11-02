@@ -34,7 +34,7 @@ export function MessageComposer({ conversationId }: { conversationId: string }) 
           }
         }}
       />
-      <button aria-label="Send" className="flex size-10 shrink-0 items-center justify-center rounded-full bg-outback-600 text-white transition hover:bg-outback-700 active:scale-95">
+      <button aria-label="Send" className="flex size-10 shrink-0 items-center justify-center rounded-full bg-outback text-white transition hover:bg-outback/90 active:scale-95">
         <ArrowUp className="size-5" strokeWidth={2.5} />
       </button>
     </form>

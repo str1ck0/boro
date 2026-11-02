@@ -78,8 +78,8 @@ export function getCollection(slug: string) {
 }
 
 export const TONE_CLASSES: Record<Tone, { bg: string; soft: string; text: string }> = {
-  outback: { bg: "bg-outback", soft: "bg-outback-50", text: "text-outback-700" },
+  outback: { bg: "bg-outback", soft: "bg-outback-50", text: "text-outback" },
   cosmos: { bg: "bg-cosmos", soft: "bg-cosmos-50", text: "text-cosmos" },
-  daintree: { bg: "bg-daintree", soft: "bg-daintree-50", text: "text-daintree-700" },
-  eureka: { bg: "bg-eureka", soft: "bg-eureka-50", text: "text-eureka-700" },
+  daintree: { bg: "bg-daintree", soft: "bg-daintree-50", text: "text-daintree" },
+  eureka: { bg: "bg-eureka", soft: "bg-eureka-50", text: "text-eureka" },
 };

@@ -11,7 +11,7 @@ type Props = { signedIn: boolean; unread: number; pending: number };
 export function BottomNav({ signedIn, unread, pending }: Props) {
   const path = usePathname();
   const tabs = [
-    { href: "/", label: "Home", icon: Home, active: path === "/", color: "text-outback-600" },
+    { href: "/", label: "Home", icon: Home, active: path === "/", color: "text-outback" },
     { href: "/explore", label: "Explore", icon: Compass, active: path.startsWith("/explore"), color: "text-cosmos" },
     { href: "/lend", label: "Lend", icon: Plus, active: path.startsWith("/lend"), color: "text-ink", primary: true },
     {
@@ -19,7 +19,7 @@ export function BottomNav({ signedIn, unread, pending }: Props) {
       label: "Chats",
       icon: MessageCircle,
       active: path.startsWith("/messages"),
-      color: "text-daintree-700",
+      color: "text-daintree",
       badge: unread,
     },
     {
@@ -27,7 +27,7 @@ export function BottomNav({ signedIn, unread, pending }: Props) {
       label: signedIn ? "My Boro" : "Log in",
       icon: User,
       active: ["/my-boro", "/account", "/saved", "/sign-in"].some((p) => path.startsWith(p)),
-      color: "text-eureka-700",
+      color: "text-eureka",
       dot: pending > 0,
     },
   ];
@@ -51,7 +51,7 @@ export function BottomNav({ signedIn, unread, pending }: Props) {
               )}
             >
               {t.primary ? (
-                <span className="flex size-9 items-center justify-center rounded-full bg-outback-600 text-white shadow-sm">
+                <span className="flex size-9 items-center justify-center rounded-full bg-outback text-white shadow-sm">
                   <t.icon className="size-5" strokeWidth={2.5} />
                 </span>
               ) : (
@@ -59,7 +59,7 @@ export function BottomNav({ signedIn, unread, pending }: Props) {
               )}
               <span className={t.primary ? "sr-only" : undefined}>{t.label}</span>
               {!!t.badge && (
-                <span className="absolute right-[22%] top-0 flex min-w-4.5 items-center justify-center rounded-full bg-outback-600 px-1 text-[10px] font-bold text-white">
+                <span className="absolute right-[22%] top-0 flex min-w-4.5 items-center justify-center rounded-full bg-outback px-1 text-[10px] font-bold text-white">
                   {t.badge}
                 </span>
               )}

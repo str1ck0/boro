@@ -50,7 +50,7 @@ export default async function ConversationPage({ params }: { params: Promise<{ i
     <div className="grid gap-8 lg:grid-cols-[320px_1fr]">
       <AutoRefresh />
       <aside className="hidden lg:block">
-        <h1 className="mb-3 px-3 text-2xl font-extrabold text-daintree-700">Chats</h1>
+        <h1 className="mb-3 px-3 text-2xl font-extrabold text-daintree">Chats</h1>
         <ConversationList conversations={all} activeId={convo.id} />
       </aside>
 

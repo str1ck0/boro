@@ -20,8 +20,8 @@ export default function HowItWorksPage() {
   return (
     <div className="space-y-14">
       <PageHeader title="How Boro works" subtitle="Buy less, share more. Here's the whole thing in a minute." />
-      <Steps title="Borrowing" steps={BORROW} accent="bg-outback-50 text-outback-700" />
-      <Steps title="Lending" steps={LEND} accent="bg-daintree-50 text-daintree-700" />
+      <Steps title="Borrowing" steps={BORROW} accent="bg-outback-50 text-outback" />
+      <Steps title="Lending" steps={LEND} accent="bg-daintree-50 text-daintree" />
       <section className="rounded-card bg-eureka-50 p-6 sm:p-8">
         <h2 className="text-xl font-bold">What about payments?</h2>
         <p className="mt-2 max-w-2xl text-ink/80">

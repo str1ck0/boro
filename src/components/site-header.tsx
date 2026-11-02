@@ -47,7 +47,7 @@ export function SiteHeader({ signedIn, unread, pending, image, name }: Props) {
               >
                 <MessageCircle className="size-5" />
                 {unread > 0 && (
-                  <span className="absolute right-1.5 top-1.5 flex min-w-4.5 items-center justify-center rounded-full bg-outback-600 px-1 text-[11px] font-bold text-white">
+                  <span className="absolute right-1.5 top-1.5 flex min-w-4.5 items-center justify-center rounded-full bg-outback px-1 text-[11px] font-bold text-white">
                     {unread}
                   </span>
                 )}
