@@ -25,8 +25,8 @@ export default function HowItWorksPage() {
       <section className="rounded-card bg-eureka-50 p-6 sm:p-8">
         <h2 className="text-xl font-bold">What about payments?</h2>
         <p className="mt-2 max-w-2xl text-ink/80">
-          Right now Boro is free to use and payments are arranged directly between members — cash or bank
-          transfer at pick-up works well. In-app payments and bond holding are on the way.
+          Right now Boro is free to use and payments are arranged directly between members — cash, EFT or
+          SnapScan at pick-up all work well. In-app payments and bond holding are on the way.
         </p>
       </section>
       <div className="flex flex-wrap gap-3">

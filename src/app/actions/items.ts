@@ -11,7 +11,7 @@ import { isOwnPhotoUrl } from "@/lib/photo-url";
 import { fieldErrors, formValues, type FormState } from "@/lib/form";
 import { getCurrentUser, requireUser } from "@/lib/session";
 
-const dollars = (label: string, max: number) =>
+const rand = (label: string, max: number) =>
   z.coerce
     .number({ message: `${label} must be a number` })
     .min(0, `${label} can't be negative`)
@@ -25,8 +25,8 @@ const itemSchema = z.object({
   description: z.string().trim().min(20, "Add a little more detail (at least 20 characters)").max(2000),
   category: z.enum(CATEGORY_SLUGS, { message: "Pick a category" }),
   suburb: z.string().trim().min(2, "Where can it be picked up?").max(60),
-  pricePerDay: dollars("Price", 10_000).refine((c) => c >= 100, "Minimum is $1 a day"),
-  bond: dollars("Bond", 50_000),
+  pricePerDay: rand("Price", 100_000).refine((c) => c >= 1000, "Minimum is R10 a day"),
+  bond: rand("Bond", 500_000),
   minDays: z.coerce.number().int().min(1).max(60),
   photos: z.array(photoUrl).min(1, "Add at least one photo").max(8, "Up to 8 photos"),
 });

@@ -107,7 +107,7 @@ function Hero() {
     <section className="space-y-8 pt-2 sm:pt-6">
       <div className="max-w-3xl">
         <p className="mb-3 inline-flex items-center gap-2 rounded-full bg-surface px-3 py-1 text-sm font-semibold text-cosmos shadow-card">
-          <span className="size-2 rounded-full bg-daintree" /> Now live in Perth
+          <span className="size-2 rounded-full bg-daintree" /> Now live in Cape Town
         </p>
         <h1 className="text-5xl font-extrabold leading-[1.02] tracking-tight sm:text-7xl">
           Don&apos;t buy it.

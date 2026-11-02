@@ -10,10 +10,10 @@ export const metadata: Metadata = {
   metadataBase: new URL(appUrl),
   title: { default: "Boro — Don't buy it. Boro it.", template: "%s · Boro" },
   description:
-    "Borrow the things you need from people nearby, and lend out the things you don't. Kayaks, cameras, tools, tents and more — in Perth.",
+    "Borrow the things you need from people nearby, and lend out the things you don't. Kayaks, cameras, tools, tents and more — in Cape Town.",
   applicationName: "Boro",
   appleWebApp: { capable: true, title: "Boro", statusBarStyle: "default" },
-  openGraph: { siteName: "Boro", type: "website", locale: "en_AU" },
+  openGraph: { siteName: "Boro", type: "website", locale: "en_ZA" },
 };
 
 export const viewport: Viewport = {
@@ -25,7 +25,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en-AU" className={archivo.variable}>
+    <html lang="en-ZA" className={archivo.variable}>
       <body className="min-h-dvh font-sans">{children}</body>
     </html>
   );

@@ -1,13 +1,13 @@
-/** Perth metro suburbs for the location picker. Boro launches in Perth first. */
+/** Cape Town suburbs for the location picker. Boro launches in Cape Town first. */
 export const SUBURBS = [
-  "Applecross", "Armadale", "Balcatta", "Bassendean", "Bayswater", "Beaconsfield", "Belmont",
-  "Bicton", "Booragoon", "Butler", "Canning Vale", "Cannington", "City Beach", "Claremont",
-  "Clarkson", "Cockburn Central", "Como", "Cottesloe", "Doubleview", "Dianella", "East Fremantle",
-  "East Perth", "Ellenbrook", "Floreat", "Fremantle", "Girrawheen", "Glendalough", "Guildford",
-  "Hillarys", "Inglewood", "Joondalup", "Karrinyup", "Kelmscott", "Kensington", "Kingsley",
-  "Leederville", "Maylands", "Midland", "Mosman Park", "Mount Hawthorn", "Mount Lawley",
-  "Mundaring", "Nedlands", "North Perth", "Northbridge", "Osborne Park", "Palmyra", "Perth",
-  "Rivervale", "Rockingham", "Scarborough", "Shenton Park", "South Fremantle", "South Perth",
-  "Spearwood", "Subiaco", "Swanbourne", "Trigg", "Victoria Park", "Wembley", "West Leederville",
-  "West Perth", "Willetton", "Wanneroo", "Yokine",
+  "Athlone", "Bantry Bay", "Bellville", "Bergvliet", "Bloubergstrand", "Bo-Kaap", "Brackenfell",
+  "Camps Bay", "Century City", "City Centre", "Claremont", "Clifton", "Constantia", "De Waterkant",
+  "Diep River", "Durbanville", "Fish Hoek", "Fresnaye", "Gardens", "Goodwood", "Green Point",
+  "Gugulethu", "Hout Bay", "Kalk Bay", "Kenilworth", "Khayelitsha", "Kommetjie", "Lakeside", "Langa",
+  "Llandudno", "Melkbosstrand", "Milnerton", "Mitchells Plain", "Mouille Point", "Mowbray",
+  "Muizenberg", "Newlands", "Noordhoek", "Observatory", "Oranjezicht", "Parklands", "Parow",
+  "Pinelands", "Plumstead", "Retreat", "Rondebosch", "Rosebank", "Salt River", "Scarborough",
+  "Sea Point", "Simon's Town", "Somerset West", "Stellenbosch", "Strand", "Sunset Beach",
+  "Table View", "Tamboerskloof", "Tokai", "University Estate", "Vredehoek", "Woodstock", "Wynberg",
+  "Zonnebloem",
 ] as const;

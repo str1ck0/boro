@@ -1,11 +1,13 @@
 import { differenceInCalendarDays, format, formatDistanceToNowStrict, isSameMonth, parseISO } from "date-fns";
 
-const aud = new Intl.NumberFormat("en-AU", { style: "currency", currency: "AUD", maximumFractionDigits: 0 });
-const audCents = new Intl.NumberFormat("en-AU", { style: "currency", currency: "AUD" });
-
-/** Cents → "$12" (or "$12.50" when there are cents). */
+/**
+ * Cents → "R1,250" (or "R99.50" when there are cents). Formatted by hand so the
+ * output is identical on server and client regardless of ICU locale data.
+ */
 export function money(cents: number) {
-  return cents % 100 === 0 ? aud.format(cents / 100) : audCents.format(cents / 100);
+  const rand = cents / 100;
+  const digits = cents % 100 === 0 ? 0 : 2;
+  return `R${rand.toLocaleString("en-US", { minimumFractionDigits: digits, maximumFractionDigits: digits })}`;
 }
 
 /** Inclusive number of days between two ISO dates. */

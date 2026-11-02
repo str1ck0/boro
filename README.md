@@ -1,6 +1,6 @@
 # Boro
 
-**Don't buy it. Boro it.** A peer-to-peer marketplace for borrowing and lending everyday things — kayaks, cameras, drills, tents — from people nearby. Launching in Perth, WA.
+**Don't buy it. Boro it.** A peer-to-peer marketplace for borrowing and lending everyday things — kayaks, cameras, drills, tents — from people nearby. Launching in Cape Town, South Africa.
 
 Boro started as a UX/UI university project (Figma prototype, v1 → v2), then became a Rails app at Le Wagon. This is **v3**: a ground-up rebuild as a production web app.
 

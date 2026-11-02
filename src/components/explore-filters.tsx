@@ -16,9 +16,9 @@ const SORTS = [
 
 const PRICES = [
   { value: "", label: "Any price" },
-  { value: "10", label: "Under $10/day" },
-  { value: "25", label: "Under $25/day" },
-  { value: "50", label: "Under $50/day" },
+  { value: "100", label: "Under R100/day" },
+  { value: "250", label: "Under R250/day" },
+  { value: "500", label: "Under R500/day" },
 ];
 
 const pill =
@@ -112,7 +112,7 @@ export function ExploreFilters() {
           className={selectClass}
           style={chevron}
         >
-          <option value="">All of Perth</option>
+          <option value="">All of Cape Town</option>
           {SUBURBS.map((s) => (
             <option key={s} value={s}>{s}</option>
           ))}

@@ -7,7 +7,7 @@ export function SiteFooter() {
       <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-6 px-6 py-10">
         <div className="flex items-center gap-4">
           <Logo className="h-6" gap="#fff" />
-          <p className="text-sm text-muted">Don&apos;t buy it. Boro it. Made in Perth.</p>
+          <p className="text-sm text-muted">Don&apos;t buy it. Boro it. Made in Cape Town.</p>
         </div>
         <nav className="flex gap-6 text-sm text-muted" aria-label="Footer">
           <Link href="/how-it-works" className="hover:text-ink">How Boro works</Link>

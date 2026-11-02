@@ -20,14 +20,14 @@ export function Logo({
 }) {
   const c = (brand: string) => mono ?? brand;
   const letters = [
-    { d: "M19 19V117 M142 117a57 57 0 1 1-114 0a57 57 0 1 1 114 0", color: c("#ff6633") },
-    { d: "M281 117a57 57 0 1 1-114 0a57 57 0 1 1 114 0", color: c("#333399") },
-    { d: "M467 117a57 57 0 1 1-114 0a57 57 0 1 1 114 0", color: c("#ffcc00") },
-    { d: "M307 174V112A48 48 0 0 1 355 64", color: c("#33cc66") },
+    { d: "M19 19V117 M133 117a57 57 0 1 1-114 0a57 57 0 1 1 114 0", color: c("#ff6633") },
+    { d: "M272 117a57 57 0 1 1-114 0a57 57 0 1 1 114 0", color: c("#333399") },
+    { d: "M458 117a57 57 0 1 1-114 0a57 57 0 1 1 114 0", color: c("#ffcc00") },
+    { d: "M298 174V112A48 48 0 0 1 346 64", color: c("#33cc66") },
   ];
   return (
     <svg
-      viewBox="0 0 486 193"
+      viewBox="0 0 477 193"
       role="img"
       aria-label={title}
       className={cn("h-8 w-auto", className)}

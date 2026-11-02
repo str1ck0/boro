@@ -70,7 +70,7 @@ export function ItemForm({
           <Field label="Price per day" htmlFor="pricePerDay" error={e.pricePerDay}>
             <MoneyInput id="pricePerDay" name="pricePerDay" defaultValue={v.pricePerDay} invalid={!!e.pricePerDay} />
           </Field>
-          <Field label="Bond" htmlFor="bond" error={e.bond} hint="Refundable. $0 for none.">
+          <Field label="Bond" htmlFor="bond" error={e.bond} hint="Refundable. R0 for none.">
             <MoneyInput id="bond" name="bond" defaultValue={v.bond} invalid={!!e.bond} />
           </Field>
           <Field label="Minimum days" htmlFor="minDays" error={e.minDays}>
@@ -94,8 +94,8 @@ export function ItemForm({
 function MoneyInput({ invalid, ...props }: { id: string; name: string; defaultValue: string; invalid: boolean }) {
   return (
     <div className="relative">
-      <span className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-muted">$</span>
-      <Input {...props} type="number" inputMode="decimal" min={0} step="0.5" className="pl-8" aria-invalid={invalid} />
+      <span className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-muted">R</span>
+      <Input {...props} type="number" inputMode="decimal" min={0} step="1" className="pl-8" aria-invalid={invalid} />
     </div>
   );
 }

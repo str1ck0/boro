@@ -47,7 +47,7 @@ export const COLLECTIONS = [
   {
     slug: "day-for-it",
     title: "Day for it?",
-    blurb: "Beach cricket, boards and everything for a Perth summer.",
+    blurb: "Beach cricket, boards and everything for a Cape Town summer.",
     image: "/seed/collections/day-for-it.jpg",
     categories: ["water", "sport"],
   },

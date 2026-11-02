@@ -98,9 +98,9 @@ export const items = pgTable(
     title: text("title").notNull(),
     description: text("description").notNull(),
     category: text("category").notNull(),
-    /** Price per day, in cents (AUD). */
+    /** Price per day, in cents (ZAR). */
     pricePerDay: integer("price_per_day").notNull(),
-    /** Refundable bond, in cents (AUD). Arranged between users in v1. */
+    /** Refundable bond, in cents (ZAR). Arranged between users in v1. */
     bond: integer("bond").notNull().default(0),
     minDays: integer("min_days").notNull().default(1),
     suburb: text("suburb").notNull(),
