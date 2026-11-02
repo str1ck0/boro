@@ -41,7 +41,7 @@ export function AuthForm({ mode, googleEnabled }: { mode: "sign-in" | "sign-up";
       );
       return;
     }
-    router.push(mode === "sign-up" && next === "/" ? "/account?welcome=1" : next);
+    router.push(mode === "sign-up" && next === "/" ? "/account/profile?welcome=1" : next);
     router.refresh();
   }
 

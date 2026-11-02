@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Heart, Inbox, Package, PackageOpen, Plus } from "lucide-react";
+import { ArrowRight, Inbox, Package, PackageOpen, Plus, Settings } from "lucide-react";
 import { BookingActions } from "@/components/booking-actions";
 import { BookingStatusBadge } from "@/components/booking-status";
 import { ItemGrid } from "@/components/item-card";
@@ -40,8 +40,9 @@ export default async function MyBoroPage({ searchParams }: { searchParams: Promi
         subtitle="Everything you're borrowing and lending, in one place."
         tone="eureka"
         action={
-          <Link href="/saved" className="hidden items-center gap-2 rounded-full border border-line bg-surface px-4 py-2 text-sm font-semibold hover:border-ink/30 sm:inline-flex">
-            <Heart className="size-4" /> Saved
+          <Link href="/account" aria-label="Account and settings" className="flex shrink-0 flex-col items-center gap-1 text-sm font-semibold">
+            <Avatar src={user.image} name={user.name} size={56} className="ring-4 ring-white" />
+            <span className="inline-flex items-center gap-1 text-muted"><Settings className="size-3.5" /> Account</span>
           </Link>
         }
       />

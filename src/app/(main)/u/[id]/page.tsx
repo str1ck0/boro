@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { BadgeCheck, MapPin, Star } from "lucide-react";
 import { ItemGrid } from "@/components/item-card";
 import { ReviewList } from "@/components/review-list";
-import { Avatar, ButtonLink } from "@/components/ui";
+import { Avatar, ButtonLink, HeaderBand } from "@/components/ui";
 import { firstName, memberSince } from "@/lib/format";
 import { getProfile } from "@/lib/queries";
 import { getCurrentUser } from "@/lib/session";
@@ -23,28 +23,38 @@ export default async function ProfilePage({ params }: { params: Params }) {
 
   return (
     <div className="space-y-10">
-      <header className="flex flex-col gap-6 rounded-[2rem] bg-mist p-6 sm:flex-row sm:items-center sm:p-8">
-        <Avatar src={profile.image} name={profile.name} size={112} className="ring-4 ring-eureka" />
-        <div className="flex-1 space-y-2">
-          <h1 className="text-3xl font-extrabold tracking-tight text-eureka sm:text-4xl">{profile.name}</h1>
-          <p className="text-muted">Boro member since {memberSince(profile.createdAt)}</p>
-          <div className="flex flex-wrap gap-x-5 gap-y-2 pt-1 text-sm font-semibold">
-            {profile.stats.reviewCount > 0 && (
-              <span className="inline-flex items-center gap-1">
-                <Star className="size-4 fill-outback text-outback" />
-                {profile.stats.rating?.toFixed(1)} · {profile.stats.reviewCount} review{profile.stats.reviewCount === 1 ? "" : "s"}
-              </span>
-            )}
-            {profile.emailVerified && (
-              <span className="inline-flex items-center gap-1"><BadgeCheck className="size-4 text-daintree" /> Verified email</span>
-            )}
-            {profile.suburb && (
-              <span className="inline-flex items-center gap-1 text-cosmos"><MapPin className="size-4" /> {profile.suburb}</span>
-            )}
+      <HeaderBand className="space-y-5">
+        <div className="flex items-center justify-between gap-5">
+          <div className="min-w-0">
+            <h1 className="text-4xl font-extrabold leading-tight tracking-tight text-eureka sm:text-5xl">{profile.name}</h1>
+            <p className="mt-1 text-lg">Boro member since {memberSince(profile.createdAt)}</p>
           </div>
+          <Avatar src={profile.image} name={profile.name} size={88} className="shrink-0 ring-4 ring-white" />
         </div>
-        {me?.id === profile.id && <ButtonLink href="/account" variant="outline">Edit profile</ButtonLink>}
-      </header>
+        <div className="flex flex-wrap items-center gap-x-6 gap-y-2 font-semibold">
+          {profile.stats.reviewCount > 0 && (
+            <span className="inline-flex items-center gap-1.5">
+              <Star className="size-5 fill-outback text-outback" />
+              {profile.stats.rating?.toFixed(1)} · {profile.stats.reviewCount} review{profile.stats.reviewCount === 1 ? "" : "s"}
+            </span>
+          )}
+          {profile.emailVerified && (
+            <span className="inline-flex items-center gap-1.5">
+              <BadgeCheck className="size-5 text-outback" /> Verified email
+            </span>
+          )}
+          {profile.suburb && (
+            <span className="inline-flex items-center gap-1.5 font-medium text-cosmos">
+              <MapPin className="size-5 text-outback" /> {profile.suburb}
+            </span>
+          )}
+          {me?.id === profile.id && (
+            <ButtonLink href="/account/profile" variant="outline" size="sm" className="ml-auto">
+              Edit profile
+            </ButtonLink>
+          )}
+        </div>
+      </HeaderBand>
 
       {profile.bio && (
         <section className="max-w-2xl space-y-2">

@@ -54,7 +54,7 @@ export default async function ConversationPage({ params }: { params: Promise<{ i
         <ConversationList conversations={all} activeId={convo.id} />
       </aside>
 
-      <section className="flex min-h-[calc(100dvh-7rem)] flex-col">
+      <section className="flex min-h-[calc(100dvh-7rem)] min-w-0 flex-col">
         <header className="sticky top-16 z-10 -mx-4 flex items-center gap-3 border-b border-line bg-canvas/95 px-4 py-3 backdrop-blur sm:mx-0 sm:rounded-b-2xl">
           <Link href="/messages" aria-label="Back to chats" className="-ml-2 flex size-10 items-center justify-center rounded-full hover:bg-ink/5 lg:hidden">
             <ChevronLeft className="size-6" />
