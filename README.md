@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Boro
 
-## Getting Started
+**Don't buy it. Boro it.** A peer-to-peer marketplace for borrowing and lending everyday things — kayaks, cameras, drills, tents — from people nearby. Launching in Perth, WA.
 
-First, run the development server:
+Boro started as a UX/UI university project (Figma prototype, v1 → v2), then became a Rails app at Le Wagon. This is **v3**: a ground-up rebuild as a production web app.
+
+## Features
+
+- Browse without an account: search (Postgres full-text), categories, curated collections, suburb and price filters
+- Listings with multi-photo upload (client-side resize → Vercel Blob), pricing per day, bond and minimum hire
+- Booking requests with date-clash checks → lender accepts/declines → marked returned → two-way reviews
+- Chat per item, with booking events posted into the thread and unread badges
+- Profiles with ratings, saved items, account settings
+- Mobile-first with a bottom tab bar, installable as a PWA
+
+Payments are arranged between members for now; Stripe Connect is next on the roadmap.
+
+## Stack
+
+Next.js 16 (App Router, Server Actions) · TypeScript · Tailwind CSS v4 · Postgres (Neon) + Drizzle ORM · Better Auth · Vercel Blob · Vercel
+
+## Getting started
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+nvm use                 # Node 20.19+
+corepack enable         # pnpm
+pnpm install
+cp .env.example .env    # set DATABASE_URL + BETTER_AUTH_SECRET
+createdb boro_dev       # or point DATABASE_URL at Neon
+pnpm db:migrate
+pnpm db:seed            # demo data; --reset wipes everything first
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Demo login after seeding: `tom@demo.boro.app` / `borrow-it-boro-it`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| Script | |
+| --- | --- |
+| `pnpm db:generate` | Generate a migration from `src/db/schema.ts` |
+| `pnpm db:migrate` | Apply migrations |
+| `pnpm db:studio` | Browse the database |
+| `pnpm typecheck` / `pnpm lint` / `pnpm build` | Checks |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Project layout
 
-## Learn More
+```
+src/
+  app/(main)/      pages with the app shell (home, explore, items, lend, messages, my-boro…)
+  app/(auth)/      sign-in / sign-up
+  app/actions/     server actions (items, bookings, messages, account)
+  app/api/         Better Auth handler, photo upload
+  components/      UI
+  db/schema.ts     Drizzle schema
+  lib/             auth, queries, formatting, categories
+scripts/seed.ts    demo data
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Brand
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Colours from the Boro brand guide — Outback `#FF6633`, Cosmos `#333399`, Daintree `#33CC66`, Eureka `#FFCC00`. Type: Archivo. Item line-icons are from the original v2 design.
