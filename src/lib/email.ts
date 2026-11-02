@@ -18,9 +18,16 @@ export async function sendEmail({ to, subject, html, text }: Email) {
   const res = await fetch("https://api.resend.com/emails", {
     method: "POST",
     headers: { Authorization: `Bearer ${key}`, "Content-Type": "application/json" },
-    body: JSON.stringify({ from: process.env.EMAIL_FROM ?? "Boro <onboarding@resend.dev>", to, subject, html, text }),
+    body: JSON.stringify({ from: sender(), to, subject, html, text }),
   });
   if (!res.ok) throw new Error(`Resend error ${res.status}: ${await res.text()}`);
+}
+
+/** EMAIL_FROM if set, else noreply@ the domain the Resend integration verified. */
+function sender() {
+  if (process.env.EMAIL_FROM) return process.env.EMAIL_FROM;
+  const domain = process.env.RESEND_EMAIL_DOMAIN;
+  return domain ? `Boro <noreply@${domain}>` : "Boro <onboarding@resend.dev>";
 }
 
 const escape = (s: string) => s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]!);
