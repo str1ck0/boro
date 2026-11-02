@@ -70,3 +70,35 @@
 @utility pb-safe {
   padding-bottom: max(env(safe-area-inset-bottom), 0.5rem);
 }
+
+/* Login splash: icons fade in, then drift slowly around the logo. */
+@keyframes splash-in {
+  from {
+    opacity: 0;
+    scale: 0.92;
+  }
+}
+@keyframes splash-drift {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  33% {
+    transform: translate(var(--dx), var(--dy)) rotate(var(--r));
+  }
+  66% {
+    transform: translate(calc(var(--dx) * -0.6), calc(var(--dy) * 0.5)) rotate(calc(var(--r) * -0.7));
+  }
+}
+.splash-float {
+  translate: -50% -50%;
+  animation:
+    splash-in 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) var(--in) both,
+    splash-drift var(--dur) ease-in-out var(--delay) infinite;
+  will-change: transform;
+}
+@media (prefers-reduced-motion: reduce) {
+  .splash-float {
+    animation: splash-in 0.6s ease-out var(--in) both;
+  }
+}

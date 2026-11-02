@@ -82,6 +82,12 @@ export function AuthForm({ mode, googleEnabled }: { mode: "sign-in" | "sign-up";
         </>
       )}
 
+      {params.get("reset") && (
+        <p className="rounded-2xl bg-daintree-50 p-3 text-sm font-medium text-daintree-700">
+          Password updated — log in with your new one.
+        </p>
+      )}
+
       <form onSubmit={onSubmit} className="space-y-4">
         {mode === "sign-up" && (
           <Field label="Full name" htmlFor="name">
@@ -91,7 +97,19 @@ export function AuthForm({ mode, googleEnabled }: { mode: "sign-in" | "sign-up";
         <Field label="Email address" htmlFor="email">
           <Input id="email" name="email" type="email" autoComplete="email" required />
         </Field>
-        <Field label="Password" htmlFor="password" hint={mode === "sign-up" ? "At least 8 characters." : undefined}>
+        <Field
+          label="Password"
+          htmlFor="password"
+          hint={
+            mode === "sign-up" ? (
+              "At least 8 characters."
+            ) : (
+              <Link href="/forgot-password" className="font-semibold text-cosmos hover:underline">
+                Forgot password?
+              </Link>
+            )
+          }
+        >
           <div className="relative">
             <Input
               id="password"

@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import { cn } from "@/lib/cn";
 
 /**
@@ -7,11 +8,13 @@ import { cn } from "@/lib/cn";
  */
 export function Logo({
   className,
+  style,
   mono,
   gap = "var(--color-canvas)",
   title = "Boro",
 }: {
   className?: string;
+  style?: CSSProperties;
   /** Render in a single colour (e.g. "white") instead of the four brand colours. */
   mono?: string;
   /** Colour of the knockout gaps — match the background the logo sits on. */
@@ -31,6 +34,7 @@ export function Logo({
       role="img"
       aria-label={title}
       className={cn("h-8 w-auto", className)}
+      style={style}
       fill="none"
       strokeLinecap="round"
     >
