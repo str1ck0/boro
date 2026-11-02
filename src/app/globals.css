@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+
+  /* Brand — "Stars of the show" */
+  --color-outback: #ff6633;
+  --color-outback-600: #e8501c; /* buttons: passes AA for large/bold text on white */
+  --color-outback-700: #c2410c;
+  --color-outback-50: #fff2ec;
+  --color-outback-100: #ffe0d3;
+
+  --color-cosmos: #333399;
+  --color-cosmos-700: #26267a;
+  --color-cosmos-900: #17174d;
+  --color-cosmos-50: #efeffa;
+  --color-cosmos-100: #dcdcf3;
+
+  /* Brand — "Supporting actors" */
+  --color-daintree: #33cc66;
+  --color-daintree-700: #1d8a43;
+  --color-daintree-50: #eafaef;
+
+  --color-eureka: #ffcc00;
+  --color-eureka-700: #8a6d00;
+  --color-eureka-50: #fff8db;
+
+  /* Neutrals — "Backstage crew", warmed slightly */
+  --color-ink: #16162b;
+  --color-muted: #6a6a7e;
+  --color-line: #e7e5ee;
+  --color-canvas: #f7f6f3;
+  --color-surface: #ffffff;
+
+  --radius-card: 1.25rem;
+  --shadow-card: 0 1px 2px rgb(22 22 43 / 0.04), 0 8px 24px -12px rgb(22 22 43 / 0.12);
+  --shadow-float: 0 12px 40px -12px rgb(22 22 43 / 0.25);
+}
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    @apply bg-canvas text-ink antialiased;
+  }
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-cosmos;
+  }
+  ::selection {
+    @apply bg-eureka/60;
+  }
+}
+
+@utility scrollbar-none {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Brand line-icons are mono SVGs; this lets us tint them with currentColor. */
+@utility icon-mask {
+  background-color: currentColor;
+  mask: var(--icon) center / contain no-repeat;
+}
+
+@utility pb-safe {
+  padding-bottom: max(env(safe-area-inset-bottom), 0.5rem);
+}
