@@ -107,7 +107,7 @@ export default async function ItemPage({
             </section>
           )}
 
-          <section className="flex items-center gap-4 rounded-card bg-surface p-5 shadow-card">
+          <section className="flex items-center gap-4 rounded-card bg-mist p-5">
             <Avatar src={item.owner.image} name={item.owner.name} size={56} />
             <div className="min-w-0 flex-1">
               <p className="text-sm text-muted">Lent by</p>
@@ -136,7 +136,7 @@ export default async function ItemPage({
         </div>
 
         <aside id="book" className="lg:sticky lg:top-24 lg:self-start">
-          <div className="space-y-5 rounded-[1.75rem] bg-surface p-6 shadow-card">
+          <div className="space-y-5 rounded-[1.75rem] bg-mist p-6">
             <p className="text-2xl">
               <span className="font-extrabold">{money(item.pricePerDay)}</span>
               <span className="text-lg text-muted"> / day</span>
@@ -193,7 +193,7 @@ export default async function ItemPage({
 
 function Fact({ label, value }: { label: string; value: string }) {
   return (
-    <div className="rounded-2xl bg-surface p-4 shadow-card">
+    <div className="rounded-2xl bg-mist p-4">
       <dt className="text-xs font-semibold uppercase tracking-wide text-muted">{label}</dt>
       <dd className="mt-1 text-lg font-bold">{value}</dd>
     </div>

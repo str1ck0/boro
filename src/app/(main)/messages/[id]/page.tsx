@@ -76,7 +76,7 @@ export default async function ConversationPage({ params }: { params: Promise<{ i
         </header>
 
         {visibleBookings.map((b) => (
-          <div key={b.id} className="mt-4 rounded-card bg-surface p-4 shadow-card">
+          <div key={b.id} className="mt-4 rounded-card bg-mist p-4">
             <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
               <p className="font-bold">
                 {dateRange(b.startDate, b.endDate)}
@@ -111,7 +111,7 @@ export default async function ConversationPage({ params }: { params: Promise<{ i
                       title={format(m.createdAt, "h:mmaaa")}
                       className={cn(
                         "max-w-[80%] whitespace-pre-line rounded-3xl px-4 py-2.5 text-[15px] leading-snug",
-                        mine ? "rounded-br-lg bg-cosmos text-white" : "rounded-bl-lg bg-surface shadow-card",
+                        mine ? "rounded-br-lg bg-cosmos text-white" : "rounded-bl-lg bg-mist",
                       )}
                     >
                       {m.body}

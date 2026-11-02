@@ -15,7 +15,7 @@ export function ConversationList({ conversations, activeId }: { conversations: C
           <Link
             href={`/messages/${c.id}`}
             aria-current={c.id === activeId ? "page" : undefined}
-            className={cn("flex items-center gap-3 rounded-2xl px-3 py-4 transition hover:bg-surface", c.id === activeId && "bg-surface shadow-card")}
+            className={cn("flex items-center gap-3 rounded-2xl px-3 py-4 transition hover:bg-mist", c.id === activeId && "bg-mist")}
           >
             <div className="relative shrink-0">
               <Avatar src={c.otherImage} name={c.otherName} size={52} />

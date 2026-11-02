@@ -23,7 +23,7 @@ export default async function ProfilePage({ params }: { params: Params }) {
 
   return (
     <div className="space-y-10">
-      <header className="flex flex-col gap-6 rounded-[2rem] bg-surface p-6 shadow-card sm:flex-row sm:items-center sm:p-8">
+      <header className="flex flex-col gap-6 rounded-[2rem] bg-mist p-6 sm:flex-row sm:items-center sm:p-8">
         <Avatar src={profile.image} name={profile.name} size={112} className="ring-4 ring-eureka" />
         <div className="flex-1 space-y-2">
           <h1 className="text-3xl font-extrabold tracking-tight text-eureka-700 sm:text-4xl">{profile.name}</h1>

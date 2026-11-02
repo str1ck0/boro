@@ -61,7 +61,7 @@ export function ProfileForm(initial: Props) {
         <Input id="name" name="name" defaultValue={state.values?.name ?? initial.name} autoComplete="name" required />
       </Field>
       <Field label="Email" htmlFor="email" hint="Your email is never shown to other members.">
-        <Input id="email" value={initial.email} disabled className="bg-canvas text-muted" />
+        <Input id="email" value={initial.email} disabled className="text-muted" />
       </Field>
       <Field label="Suburb" htmlFor="suburb" error={e.suburb} hint="Shown on your profile and used as your default pick-up spot.">
         <Input id="suburb" name="suburb" list="suburb-list" defaultValue={state.values?.suburb ?? initial.suburb} />

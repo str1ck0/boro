@@ -1,18 +1,18 @@
 export type Tone = "outback" | "cosmos" | "daintree" | "eureka";
 
 export const CATEGORIES = [
-  { slug: "camping", label: "Camping & outdoors", icon: "tent", tone: "daintree" },
-  { slug: "water", label: "Water & beach", icon: "kayak", tone: "cosmos" },
-  { slug: "photography", label: "Photography", icon: "camera", tone: "outback" },
-  { slug: "tools", label: "Tools & DIY", icon: "chainsaw", tone: "eureka" },
-  { slug: "garden", label: "Garden", icon: "lawn-mower", tone: "daintree" },
-  { slug: "music", label: "Music", icon: "electric-guitar", tone: "outback" },
-  { slug: "party", label: "Party & events", icon: "speaker", tone: "cosmos" },
-  { slug: "sport", label: "Sport & bikes", icon: "bicycle", tone: "eureka" },
-  { slug: "art", label: "Art & craft", icon: "paint-palette", tone: "outback" },
+  { slug: "camping", label: "Camping & outdoors", icon: "tent", tone: "daintree", image: "/seed/collections/outdoors.jpg" },
+  { slug: "water", label: "Water & beach", icon: "kayak", tone: "cosmos", image: "/seed/collections/day-for-it.jpg" },
+  { slug: "photography", label: "Photography", icon: "camera", tone: "outback", image: "/seed/collections/photography.jpg" },
+  { slug: "tools", label: "Tools & DIY", icon: "chainsaw", tone: "eureka", image: "/seed/items/power-tools.jpg" },
+  { slug: "garden", label: "Garden", icon: "lawn-mower", tone: "daintree", image: "/seed/collections/garden.jpg" },
+  { slug: "music", label: "Music", icon: "electric-guitar", tone: "outback", image: "/seed/collections/lets-play.jpg" },
+  { slug: "party", label: "Party & events", icon: "speaker", tone: "cosmos", image: "/seed/collections/party.jpg" },
+  { slug: "sport", label: "Sport & bikes", icon: "bicycle", tone: "eureka", image: "/seed/collections/sport.jpg" },
+  { slug: "art", label: "Art & craft", icon: "paint-palette", tone: "outback", image: "/seed/collections/creative.jpg" },
   { slug: "cooking", label: "Cooking & BBQ", icon: "bbq-grill", tone: "eureka" },
   { slug: "other", label: "Everything else", icon: "umbrella", tone: "cosmos" },
-] as const satisfies readonly { slug: string; label: string; icon: string; tone: Tone }[];
+] as const satisfies readonly { slug: string; label: string; icon: string; tone: Tone; image?: string }[];
 
 export type CategorySlug = (typeof CATEGORIES)[number]["slug"];
 export const CATEGORY_SLUGS = CATEGORIES.map((c) => c.slug) as [CategorySlug, ...CategorySlug[]];

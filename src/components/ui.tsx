@@ -12,10 +12,10 @@ const buttonBase =
 const buttonVariants = {
   primary: "bg-outback-600 text-white hover:bg-outback-700 shadow-sm",
   secondary: "bg-cosmos text-white hover:bg-cosmos-700 shadow-sm",
-  outline: "border border-line bg-surface text-ink hover:border-ink/30",
+  outline: "bg-surface text-ink ring-1 ring-inset ring-line hover:ring-ink/30",
   ghost: "text-ink hover:bg-ink/5",
   success: "bg-daintree-700 text-white hover:bg-daintree-700/90",
-  danger: "border border-line bg-surface text-outback-700 hover:border-outback-700/40",
+  danger: "bg-surface text-outback-700 ring-1 ring-inset ring-line hover:ring-outback-700/40",
 } as const;
 
 const buttonSizes = {
@@ -41,7 +41,7 @@ export function ButtonLink({ variant, size, className, ...props }: ComponentProp
 /* ── Form fields ─────────────────────────────────────────────────────── */
 
 const fieldBase =
-  "w-full rounded-2xl border border-line bg-surface px-4 text-[15px] text-ink placeholder:text-muted/70 transition focus:border-cosmos focus:ring-4 focus:ring-cosmos/10 focus:outline-none aria-invalid:border-outback-600";
+  "w-full rounded-2xl border border-transparent bg-mist focus:bg-surface px-4 text-[15px] text-ink placeholder:text-muted/70 transition focus:border-cosmos focus:ring-4 focus:ring-cosmos/10 focus:outline-none aria-invalid:border-outback-600";
 
 export function Input({ className, ...props }: ComponentProps<"input">) {
   return <input className={cn(fieldBase, "h-12", className)} {...props} />;
@@ -188,7 +188,7 @@ export function EmptyState({
   action?: ReactNode;
 }) {
   return (
-    <div className="flex flex-col items-center rounded-card border border-dashed border-line bg-surface/60 px-6 py-14 text-center">
+    <div className="flex flex-col items-center rounded-card bg-mist px-6 py-14 text-center">
       {icon && <div className="mb-4 text-cosmos">{icon}</div>}
       <h3 className="text-lg font-bold">{title}</h3>
       {children && <p className="mt-1 max-w-sm text-muted">{children}</p>}
@@ -215,13 +215,13 @@ export function PageHeader({
     eureka: "text-eureka-700",
   }[tone];
   return (
-    <div className="flex items-end justify-between gap-4 pb-6 pt-2">
+    <HeaderBand className="mb-8 flex items-end justify-between gap-4">
       <div>
         <h1 className={cn("text-3xl font-extrabold tracking-tight sm:text-4xl", color)}>{title}</h1>
-        {subtitle && <p className="mt-1 text-muted">{subtitle}</p>}
+        {subtitle && <p className="mt-1 text-[17px] text-ink/70">{subtitle}</p>}
       </div>
       {action}
-    </div>
+    </HeaderBand>
   );
 }
 
@@ -237,6 +237,18 @@ export function SectionHeading({ title, subtitle, href, linkLabel = "See all" }:
           {linkLabel}
         </Link>
       )}
+    </div>
+  );
+}
+
+/**
+ * The grey header band from the v2 prototype: full-bleed with a rounded bottom
+ * edge on phones, a rounded panel on larger screens.
+ */
+export function HeaderBand({ className, children }: { className?: string; children: ReactNode }) {
+  return (
+    <div className={cn("-mx-4 -mt-4 rounded-b-[2rem] bg-mist px-5 pb-7 pt-6 sm:mx-0 sm:mt-0 sm:rounded-[2rem] sm:px-8 sm:py-8", className)}>
+      {children}
     </div>
   );
 }

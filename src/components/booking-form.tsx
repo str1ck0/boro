@@ -85,13 +85,13 @@ export function BookingForm({ itemId, pricePerDay, bond, minDays, lenderName, bo
       <Textarea
         name="message"
         rows={3}
-        className="min-h-0 rounded-xl"
+        className="min-h-0 rounded-xl bg-surface"
         placeholder={`Say hi to ${lenderName} — what's it for, and when suits to pick up?`}
         maxLength={1000}
       />
 
       {days > 0 && (
-        <dl className="space-y-2 rounded-2xl bg-canvas p-4 text-[15px]">
+        <dl className="space-y-2 rounded-2xl bg-surface p-4 text-[15px]">
           <div className="flex justify-between">
             <dt className="text-muted">{money(pricePerDay)} × {days} day{days > 1 ? "s" : ""}</dt>
             <dd className="font-semibold">{money(pricePerDay * days)}</dd>

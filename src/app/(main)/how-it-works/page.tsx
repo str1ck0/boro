@@ -43,7 +43,7 @@ function Steps({ title, steps, accent }: { title: string; steps: typeof BORROW; 
       <h2 className="mb-5 text-2xl font-bold">{title}</h2>
       <ol className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {steps.map((s, i) => (
-          <li key={s.title} className="rounded-card bg-surface p-5 shadow-card">
+          <li key={s.title} className="rounded-card bg-mist p-5">
             <div className={`mb-4 flex size-11 items-center justify-center rounded-2xl ${accent}`}>
               <s.icon className="size-5" />
             </div>

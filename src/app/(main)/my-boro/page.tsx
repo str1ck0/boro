@@ -46,7 +46,7 @@ export default async function MyBoroPage({ searchParams }: { searchParams: Promi
         }
       />
 
-      <nav className="flex gap-1 rounded-full bg-surface p-1 shadow-card sm:w-fit" aria-label="My Boro sections">
+      <nav className="flex gap-1 rounded-full bg-mist p-1 sm:w-fit" aria-label="My Boro sections">
         {TABS.map((t) => (
           <Link
             key={t.id}
@@ -103,11 +103,11 @@ export default async function MyBoroPage({ searchParams }: { searchParams: Promi
 
 function BookingList({ rows, role }: { rows: BookingRow[]; role: "lender" | "borrower" }) {
   return (
-    <ul className="grid gap-4 md:grid-cols-2">
+    <ul className="grid grid-cols-1 gap-4 md:grid-cols-2">
       {rows.map((b) => {
         const done = b.status === "declined" || b.status === "cancelled";
         return (
-          <li key={b.id} className={cn("rounded-card bg-surface p-4 shadow-card", done && "opacity-60")}>
+          <li key={b.id} className={cn("rounded-card bg-mist p-4", done && "opacity-60")}>
             <div className="flex gap-4">
               <Link href={`/items/${b.itemId}`} className="relative size-20 shrink-0 overflow-hidden rounded-2xl bg-line">
                 {b.itemPhoto && <Image src={b.itemPhoto} alt="" fill sizes="80px" className="object-cover" />}

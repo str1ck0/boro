@@ -45,7 +45,7 @@ export default function GuidelinesPage() {
       <PageHeader title="Lend & borrow guidelines" subtitle="A few simple rules that keep Boro friendly and fair." />
       <div className="space-y-8">
         {SECTIONS.map((s) => (
-          <section key={s.title} className="rounded-card bg-surface p-6 shadow-card">
+          <section key={s.title} className="rounded-card bg-mist p-6">
             <h2 className="mb-3 text-xl font-bold">{s.title}</h2>
             <ul className="list-disc space-y-2 pl-5 text-ink/80 marker:text-outback">
               {s.points.map((p) => <li key={p}>{p}</li>)}

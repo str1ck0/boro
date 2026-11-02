@@ -79,7 +79,7 @@ function ReviewForm({ bookingId, otherName, role }: { bookingId: string; otherNa
     );
   }
   return (
-    <form action={action} className="space-y-3 rounded-2xl bg-canvas p-4">
+    <form action={action} className="space-y-3 rounded-2xl bg-mist p-4">
       <p className="font-semibold">
         {role === "borrower" ? `How was the item and borrowing from ${otherName}?` : `How was lending to ${otherName}?`}
       </p>

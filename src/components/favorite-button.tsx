@@ -39,7 +39,7 @@ export function FavoriteButton({
         "flex items-center justify-center rounded-full transition active:scale-90",
         variant === "overlay"
           ? "size-9 bg-surface/90 shadow-sm backdrop-blur hover:bg-surface"
-          : "size-12 border border-line bg-surface hover:border-ink/30",
+          : "size-12 bg-mist hover:bg-mist-deep",
         className,
       )}
     >

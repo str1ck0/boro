@@ -1,9 +1,8 @@
 import Link from "next/link";
 import { ArrowRight, Earth, HandCoins, Handshake, Search } from "lucide-react";
-import { CategoryTiles } from "@/components/category-chips";
-import { CollectionCards } from "@/components/collections";
+import { CategoryRail } from "@/components/category-chips";
 import { ItemRail } from "@/components/item-card";
-import { ButtonLink, SectionHeading } from "@/components/ui";
+import { Avatar, ButtonLink, HeaderBand, SectionHeading } from "@/components/ui";
 import { firstName } from "@/lib/format";
 import { getFavoriteIds, listItems } from "@/lib/queries";
 import { getCurrentUser } from "@/lib/session";
@@ -20,12 +19,15 @@ export default async function HomePage() {
     <div className="space-y-14">
       {user ? (
         <section className="space-y-5">
-          <div>
-            <h1 className="text-4xl font-extrabold tracking-tight text-outback-600 sm:text-5xl">
-              Hello, {firstName(user.name)}
-            </h1>
-            <p className="mt-1 text-lg text-muted">What do you need this week?</p>
-          </div>
+          <HeaderBand className="flex items-center justify-between gap-4">
+            <div>
+              <h1 className="text-4xl font-extrabold tracking-tight text-outback-600 sm:text-5xl">
+                Hello, {firstName(user.name)}
+              </h1>
+              <p className="mt-1 text-lg text-ink/80">Welcome back</p>
+            </div>
+            <Avatar src={user.image} name={user.name} size={64} className="ring-4 ring-white" />
+          </HeaderBand>
           <SearchBar />
         </section>
       ) : (
@@ -33,18 +35,13 @@ export default async function HomePage() {
       )}
 
       <section>
-        <SectionHeading title="Discover" subtitle="Popular categories" href="/explore" />
-        <CategoryTiles />
+        <SectionHeading title="Discover" subtitle="Popular categories" href="/explore" linkLabel="Show all" />
+        <CategoryRail />
       </section>
 
       <section>
-        <SectionHeading title="Recommended" subtitle="Well-loved by Boro borrowers" href="/explore" />
+        <SectionHeading title="Recommended" subtitle="Hand-picked for you" href="/explore" linkLabel="Show all" />
         <ItemRail items={recommended} savedIds={savedIds} />
-      </section>
-
-      <section>
-        <SectionHeading title="Plans for the weekend?" subtitle="Hand-picked collections" />
-        <CollectionCards />
       </section>
 
       <section>
@@ -66,7 +63,7 @@ function SearchBar() {
         type="search"
         placeholder="Kayak, drill, tent, camera…"
         aria-label="Search Boro"
-        className="h-14 w-full rounded-full border border-line bg-surface pl-13 pr-32 text-base shadow-card placeholder:text-muted/80 focus:border-cosmos focus:outline-none focus:ring-4 focus:ring-cosmos/10"
+        className="h-14 w-full rounded-full border border-transparent bg-mist focus:bg-surface pl-13 pr-32 text-base placeholder:text-muted/80 focus:border-cosmos focus:outline-none focus:ring-4 focus:ring-cosmos/10"
       />
       <button className="absolute right-2 top-2 h-10 rounded-full bg-cosmos px-5 font-semibold text-white hover:bg-cosmos-700">
         Search
@@ -106,7 +103,7 @@ function Hero() {
   return (
     <section className="space-y-8 pt-2 sm:pt-6">
       <div className="max-w-3xl">
-        <p className="mb-3 inline-flex items-center gap-2 rounded-full bg-surface px-3 py-1 text-sm font-semibold text-cosmos shadow-card">
+        <p className="mb-3 inline-flex items-center gap-2 rounded-full bg-mist px-3 py-1 text-sm font-semibold text-cosmos">
           <span className="size-2 rounded-full bg-daintree" /> Now live in Cape Town
         </p>
         <h1 className="text-5xl font-extrabold leading-[1.02] tracking-tight sm:text-7xl">

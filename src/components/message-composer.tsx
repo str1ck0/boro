@@ -15,7 +15,7 @@ export function MessageComposer({ conversationId }: { conversationId: string }) 
         form.current?.reset();
         await sendMessage(conversationId, fd);
       }}
-      className="flex items-end gap-2 rounded-[1.75rem] border border-line bg-surface p-2 shadow-card"
+      className="flex items-end gap-2 rounded-[1.75rem] bg-mist p-2"
     >
       <label htmlFor="body" className="sr-only">Message</label>
       <textarea

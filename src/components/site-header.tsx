@@ -8,7 +8,7 @@ type Props = { signedIn: boolean; unread: number; pending: number; image: string
 
 export function SiteHeader({ signedIn, unread, pending, image, name }: Props) {
   return (
-    <header className="sticky top-0 z-30 border-b border-line/70 bg-canvas/85 backdrop-blur-md">
+    <header className="sticky top-0 z-30 bg-canvas/90 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-6xl items-center gap-4 px-4 sm:px-6">
         <Link href="/" className="shrink-0" aria-label="Boro home">
           <Logo className="h-7" />
@@ -21,7 +21,7 @@ export function SiteHeader({ signedIn, unread, pending, image, name }: Props) {
             type="search"
             placeholder="Looking for something?"
             aria-label="Search Boro"
-            className="h-11 w-full rounded-full border border-line bg-surface pl-11 pr-4 text-[15px] placeholder:text-muted/80 focus:border-cosmos focus:outline-none focus:ring-4 focus:ring-cosmos/10"
+            className="h-11 w-full rounded-full border border-transparent bg-mist focus:bg-surface pl-11 pr-4 text-[15px] placeholder:text-muted/80 focus:border-cosmos focus:outline-none focus:ring-4 focus:ring-cosmos/10"
           />
         </form>
 
@@ -52,7 +52,7 @@ export function SiteHeader({ signedIn, unread, pending, image, name }: Props) {
                   </span>
                 )}
               </Link>
-              <ButtonLink href="/lend" size="sm" className="ml-2 hidden md:inline-flex">
+              <ButtonLink href="/lend" size="sm" className="ml-2 max-md:hidden">
                 <Plus className="size-4" /> Lend an item
               </ButtonLink>
               <div className="ml-2">

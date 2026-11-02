@@ -34,7 +34,7 @@ export default async function AccountPage({ searchParams }: { searchParams: Prom
         />
       </div>
       <aside className="space-y-6 lg:pt-20">
-        <ul className="divide-y divide-line rounded-card bg-surface shadow-card">
+        <ul className="divide-y divide-line rounded-card bg-mist">
           {links.map((l) => (
             <li key={l.href}>
               <Link href={l.href} className="flex items-center justify-between px-5 py-4 font-medium hover:text-cosmos">

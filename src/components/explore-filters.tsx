@@ -40,7 +40,7 @@ export function ExploreFilters() {
 
   const active = params.get("category");
   const selectClass =
-    "h-10 shrink-0 appearance-none rounded-full border border-line bg-surface pl-4 pr-8 text-sm font-semibold focus:border-cosmos focus:outline-none bg-[length:0.9rem] bg-[right_0.75rem_center] bg-no-repeat";
+    "h-10 shrink-0 appearance-none rounded-full border border-transparent bg-mist pl-4 pr-8 text-sm font-semibold focus:border-cosmos focus:outline-none bg-[length:0.9rem] bg-[right_0.75rem_center] bg-no-repeat";
   const chevron = {
     backgroundImage:
       "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2316162b' stroke-width='2.5'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E\")",
@@ -65,14 +65,14 @@ export function ExploreFilters() {
           defaultValue={params.get("q") ?? ""}
           placeholder="Search for anything"
           aria-label="Search"
-          className="h-13 w-full rounded-full border border-line bg-surface pl-13 pr-5 text-base shadow-card placeholder:text-muted/80 focus:border-cosmos focus:outline-none focus:ring-4 focus:ring-cosmos/10"
+          className="h-13 w-full rounded-full border border-transparent bg-mist focus:bg-surface pl-13 pr-5 text-base placeholder:text-muted/80 focus:border-cosmos focus:outline-none focus:ring-4 focus:ring-cosmos/10"
         />
       </form>
 
       <div className="scrollbar-none -mx-4 flex gap-2 overflow-x-auto px-4 sm:mx-0 sm:flex-wrap sm:px-0">
         <button
           onClick={() => set({ category: null, collection: null })}
-          className={cn(pill, !active ? "border-cosmos bg-cosmos text-white" : "border-line bg-surface hover:border-ink/30")}
+          className={cn(pill, !active ? "border-cosmos bg-cosmos text-white" : "border-transparent bg-mist hover:bg-mist-deep")}
         >
           All
         </button>
@@ -84,7 +84,7 @@ export function ExploreFilters() {
             className={cn(
               pill,
               "inline-flex items-center gap-1.5",
-              active === c.slug ? "border-cosmos bg-cosmos text-white" : "border-line bg-surface hover:border-ink/30",
+              active === c.slug ? "border-cosmos bg-cosmos text-white" : "border-transparent bg-mist hover:bg-mist-deep",
             )}
           >
             {c.label}
